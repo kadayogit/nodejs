@@ -1,0 +1,1 @@
+ip: 192.168.2.302/24 port: 3089 subnet: 255.255.255.0 protocol: tcp,udp,ftp
