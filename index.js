@@ -11,5 +11,3 @@ else if(data[2]=="remove"){
 else {
     console.warn("Invalid data input!");
 }
-
-
