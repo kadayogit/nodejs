@@ -12,8 +12,18 @@ app.get("/home", (_, res) => {
     res.sendFile(`${publicPath}/home.html`);
 });
 
+app.set('view engine', 'ejs');
+
 app.get("/about", (_, res) => {
     res.sendFile(`${publicPath}/about.html`);
+});
+//create dynamic content
+const user = {
+    name: "guled",
+    email: "admin@admin.com"
+}
+app.get("/profile",(_,res)=>{
+    res.render("profile",{user});
 });
 
 app.get("/*", (_, res) => {
