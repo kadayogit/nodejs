@@ -26,6 +26,11 @@ app.get("/profile",(_,res)=>{
     res.render("profile",{user});
 });
 
+//login route
+app.get("/login", (_,res)=>{
+res.render("login");
+});
+
 app.get("/*", (_, res) => {
     res.sendFile(`${publicPath}/error.html`);
 });
