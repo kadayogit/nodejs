@@ -20,7 +20,8 @@ app.get("/about", (_, res) => {
 //create dynamic content
 const user = {
     name: "guled",
-    email: "admin@admin.com"
+    email: "admin@admin.com",
+    skills:['php', 'java','c++','nodejs', 'js','DB']
 }
 app.get("/profile",(_,res)=>{
     res.render("profile",{user});

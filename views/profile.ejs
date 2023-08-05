@@ -9,5 +9,11 @@
     <%- include("pages/header")%>
     <h2>welcome, <%= user.name%></h2>
     <h3>your email: <%= user.email%></h3>
+
+    <ul>
+        <% user.skills.forEach((item)=>{%>
+        <li><%= item %></li>
+        <% })%>
+    </ul>
 </body>
 </html>
