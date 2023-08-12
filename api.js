@@ -22,4 +22,11 @@ app.post('/', async(req, res) => {
     res.send(req.body);
     console.log(result);
 });
+
+//put api or update data into the collection
+app.put("/", async (req, res)=>{
+    let data = await dbConnection();
+    let result = await data.updateOne({name:"mouse"},{$set:req.body});
+    res.send({result});
+});
 app.listen(5000);
