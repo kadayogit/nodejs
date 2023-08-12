@@ -1,19 +1,12 @@
-const { MongoClient } = require('mongodb');
-const url="mongodb://127.0.0.1:27017";
-const databaseName= "e-comm";
-const client = new MongoClient(url);
-
+//import dbconnection
+const dbConnection = require('./mongodb');
 //get data from mongodb database collection
-async function getData() {
 
-let result = await client.connect();
-
- db = result.db(databaseName);
- collection = db.collection('products');
- 
- let data = await collection.find({}).toArray();
- console.warn(data);
-
+const main = async ()=> {
+    let data = await dbConnection();
+    data = await data.find({}).toArray();
+    console.log(data);
 }
+
 //call the function
-getData();
+main();
