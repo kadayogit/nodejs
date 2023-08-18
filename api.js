@@ -1,9 +1,11 @@
 const dbConnection = require('./mongodb');
 const express = require('express');
+//create mongodb object
+const mongodb = require('mongodb');
 const app = express();
 //create req and res route
 
-//middleware
+//middleware when you using json format
 app.use(express.json());
 
 //get api 
@@ -27,6 +29,14 @@ app.post('/', async(req, res) => {
 app.put("/", async (req, res)=>{
     let data = await dbConnection();
     let result = await data.updateOne({name:"mouse"},{$set:req.body});
-    res.send({result});
+    res.send(result);
 });
+
+//delete api or delete data into the collection
+app.delete("/:id", async (req, res)=>{
+    let data = await dbConnection();
+    let result = await data.deleteOne({_id: new mongodb.ObjectId(req.params.id)});
+    res.send(result);
+});
+
 app.listen(5000);
