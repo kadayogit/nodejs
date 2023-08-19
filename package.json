@@ -1,7 +1,6 @@
 {
   "name": "nodejs",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,6 +13,17 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongodb": "^5.7.0",
-    "mongoose": "^7.4.3"
-  }
+    "mongoose": "^7.4.3",
+    "prompt-sync": "^4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadayogit/nodejs.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/kadayogit/nodejs/issues"
+  },
+  "homepage": "https://github.com/kadayogit/nodejs#readme",
+  "description": ""
 }
